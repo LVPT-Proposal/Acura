@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acura Top Performers 2026 | Las Vegas Poker Training</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --acura-black: #000000;
+            --acura-white: #FFFFFF;
+            --acura-red: #CC0000;
+            --acura-gray: #222222;
+            --acura-light-gray: #F5F5F5;
+            --acura-dark-gray: #111111;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--acura-black);
+            color: var(--acura-white);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        
+        .orbitron-font {
+            font-family: 'Orbitron', sans-serif;
+        }
+        
+        /* Header Fix: Prevent content burial */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 15px 5%;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-bottom: 2px solid var(--acura-red);
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-direction: column;
+        }
+        
+        .acura-logo {
+            height: 40px;
+            filter: brightness(0) invert(1) drop-shadow(0 0 10px rgba(255, 255, 255, 0.7));
+        }
+        
+        .logo-text {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            font-size: 20px;
+            color: var(--acura-white);
+            letter-spacing: 2px;
+            text-align: center;
+            text-transform: uppercase;
+            margin-top: 10px;
+        }
+        
+        /* Hero Section Fix */
+        .hero {
+            height: 100vh;
+            min-height: 800px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background-color: var(--acura-black);
+            padding-top: 120px; 
+        }
+        
+        .hero-slideshow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .hero-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 3s ease-in-out;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        .hero-slide.active { opacity: 1; }
+        
+        .hero-slide::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+        }
+        
+        .hero-content {
+            text-align: center;
+            z-index: 2;
+            padding: 0 5%;
+            max-width: 1200px;
+            margin-top: 100px; /* Pushes content down so it's not buried */
+            line-height: 1;
+        }
+        
+        .hero-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 4rem;
+            font-weight: 900;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            color: var(--acura-white);
+            text-shadow: 0 0 30px rgba(204, 0, 0, 0.5);
+            letter-spacing: 3px;
+            line-height: 1.1;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--acura-white);
+            font-weight: 700;
+            line-height: 1.1;
+        }
+        
+        .event-details {
+            font-size: 1.4rem;
+            margin-bottom: 40px;
+            color: var(--acura-red);
+            font-weight: 600;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 18px 40px;
+            background: var(--acura-red);
+            color: var(--acura-white);
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 800;
+            font-size: 18px;
+            text-decoration: none;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(204, 0, 0, 0.4);
+            border: 2px solid var(--acura-red);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-5px);
+            background: transparent;
+            color: var(--acura-red);
+        }
+        
+        /* Floating Acura Asset */
+        .acura-svg-container {
+            position: absolute;
+            bottom: 8.5%;
+            right: 10%;
+            width: 80px;
+            height: 80px;
+            z-index: 1;
+            animation: floatSVG 6s infinite ease-in-out;
+        }
+        
+        .acura-svg {
+            width: 100%;
+            height: 100%;
+            filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.9));
+        }
+        
+        @keyframes floatSVG {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+
+        /* Standardized Section Spacing */
+        section {
+            padding: 100px 5%;
+        }
+        
+        .section-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.8rem;
+            margin-bottom: 50px;
+            text-align: center;
+            position: relative;
+            color: var(--acura-white);
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background-color: var(--acura-red);
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #999;
+            margin-bottom: 50px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .highlight { color: var(--acura-red); font-weight: 600; }
+
+        /* Grid Frameworks */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        /* Generic Card Styling */
+        .feature-card {
+            background: var(--acura-dark-gray);
+            border-radius: 10px;
+            padding: 30px;
+            border: 1px solid var(--acura-gray);
+            transition: all 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--acura-red);
+            box-shadow: 0 10px 20px rgba(204, 0, 0, 0.2);
+        }
+
+        /* Hand Analysis Style */
+        .analysis-box {
+            background: var(--acura-dark-gray);
+            padding: 40px;
+            border-left: 4px solid var(--acura-red);
+            margin: 40px 0;
+            border-radius: 0 10px 10px 0;
+        }
+        
+        .analysis-quote {
+            font-style: italic;
+            font-size: 1.0rem;
+            color: #ccc;
+            margin-bottom: 20px;
+        }
+
+        /* Instructor & Venue Specifics */
+        .instructor-img, .venue-img {
+            width: 100%;
+            height: 250px;
+            overflow: hidden;
+            border-radius: 8px 8px 0 0;
+        }
+        
+        .instructor-img img, .venue-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .instructor-card:hover .instructor-img img, .venue-card:hover .venue-img img {
+            transform: scale(1.1);
+        }
+
+        /* Footer Responsive Fix */
+        footer {
+            background-color: var(--acura-dark-gray);
+            padding: 60px 5%;
+            text-align: center;
+            border-top: 2px solid var(--acura-red);
+        }
+        
+        .footer-logo-responsive {
+            max-width: 100%;
+            height: auto;
+            width: 350px;
+            filter: brightness(0) invert(1);
+            margin-bottom: 25px;
+        }
+
+        /* Floating Assets */
+        .fixed-logo {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            width: 120px;
+            z-index: 999;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+        }
+
+        #lvl-floating-menu { position: fixed; bottom: 30px; right: 30px; z-index: 9999; }
+        .lvl-fab-main { width: 60px; height: 60px; border-radius: 50%; background: var(--acura-black); color: var(--acura-red); border: 2px solid var(--acura-red); font-size: 28px; display: grid; place-items: center; cursor: pointer; transition: 0.3s; }
+        .lvl-fab-actions { position: absolute; bottom: 75px; right: 0; display: flex; flex-direction: column; align-items: flex-end; gap: 12px; opacity: 0; pointer-events: none; transition: 0.3s; }
+        #lvl-floating-menu.open .lvl-fab-actions { opacity: 1; pointer-events: auto; }
+        .lvl-fab-bubble { background: var(--acura-black); color: var(--acura-white); border: 1px solid var(--acura-red); padding: 8px 16px; border-radius: 20px; font-size: 13px; text-decoration: none; white-space: nowrap; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-title { font-size: 2.8rem; }
+            .hero { padding-top: 140px; }
+            .section-title { font-size: 2.2rem; }
+            .footer-logo-responsive { width: 80%; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="https://storage.googleapis.com/msgsndr/NDOgzs7w4I6qjHbRXevV/media/6979d77d266d7351dddc4183.svg" alt="Acura Logo" class="acura-logo">
+            <div class="logo-text orbitron-font">TOP PERFORMERS CLUB 2026</div>
+        </div>
+    </header>
+
+    <img src="https://storage.googleapis.com/msgsndr/E2BEbKIK8SvsJICq4vXY/media/688b94d7fc4ae33b5ab65b48.png" alt="LV Poker Training Logo" class="fixed-logo">
+
+    <section class="hero" id="hero">
+        <div class="hero-slideshow">
+            <div class="hero-slide active" style="background-image: url('https://storage.googleapis.com/msgsndr/NDOgzs7w4I6qjHbRXevV/media/6979d4e31d09823d1b68c369.png');"></div>
+        </div>
+        <div class="acura-svg-container">
+            <img src="https://storage.googleapis.com/msgsndr/NDOgzs7w4I6qjHbRXevV/media/697aa6501927c8ad66593b86.png" alt="Acura" class="acura-svg">
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">PRECISION DECISION-MAKING</h1>
+            <p class="hero-subtitle">A High-Performance Strategy & Decision-Making Experience for Acura's Elite</p>
+            <div class="event-details">20 Guests • May 5th or 7th, 2026 • 2-Hour Exclusive Experience</div>
+            <a href="#contact" class="cta-button">RESERVE YOUR EXPERIENCE</a>
+        </div>
+    </section>
+
+    <section id="intro">
+        <h2 class="section-title orbitron-font">ENGINEERED FOR ELITE PERFORMERS</h2>
+        <div style="max-width: 900px; margin: 0 auto; font-size: 1.2rem;">
+            <p>Las Vegas Poker Training presents a private, invitation-only performance workshop for Acura's top-performing leaders.</p><br>
+            <p>This premium experience blends strategy, psychology, competitive decision-making, and pressure-tested execution. Built for high achievers focused on refining their edge—not learning fundamentals.</p><br>
+            <p>Designed for 20 of Acura's top performers, this workshop is about <span class="highlight">precision, discipline, and decision making under pressure</span>.</p>
+        </div>
+    </section>
+
+    <section id="training-style">
+        <h2 class="section-title orbitron-font">WHAT OUR TRAINING CONSISTS OF</h2>
+        <div class="analysis-box">
+            <h3 class="orbitron-font" style="color:var(--acura-red); margin-bottom: 15px;">What is Hand Analysis?</h3>
+            <p class="analysis-quote">"Imagine Tiger Woods watching your back-swing in real time and adjusting exactly what you are doing right and wrong." Matt Carpenter Event & Talent Manager</p>
+            <p>Our pros will confidently break down what all players are doing & if it is the most optimal play or if there was a better option. This is real-time feedback designed to sharpen analytical thinking & boost your confidence when making decions under pressure.</p>
+        </div>
+    </section>
+
+    <section id="pillars">
+        <h2 class="section-title orbitron-font">CORE PILLARS OF PERFORMANCE</h2>
+        <div class="grid-container">
+            <div class="feature-card">
+                <div style="font-size: 2.5rem; color: var(--acura-red); margin-bottom: 20px; text-align: center;"><i class="fas fa-bullseye"></i></div>
+                <h3 class="orbitron-font" style="text-align: center; margin-bottom: 15px;">Precision Decision-Making</h3>
+                <p>Optimizing choices with incomplete information under time constraints.</p>
+            </div>
+            <div class="feature-card">
+                <div style="font-size: 2.5rem; color: var(--acura-red); margin-bottom: 20px; text-align: center;"><i class="fas fa-balance-scale"></i></div>
+                <h3 class="orbitron-font" style="text-align: center; margin-bottom: 15px;">Risk Calibration</h3>
+                <p>Managing capital and resources with calculated, strategic risks.</p>
+            </div>
+            <div class="feature-card">
+                <div style="font-size: 2.5rem; color: var(--acura-red); margin-bottom: 20px; text-align: center;"><i class="fas fa-brain"></i></div>
+                <h3 class="orbitron-font" style="text-align: center; margin-bottom: 15px;">Emotional Control</h3>
+                <p>Maintaining composure and clarity in competitive environments.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="formats">
+        <h2 class="section-title orbitron-font">EXPERIENCE FORMAT</h2>
+        <div class="feature-card" style="max-width: 800px; margin: 0 auto;">
+            <h3 class="orbitron-font" style="color:var(--acura-red); font-size:1.8rem; margin-bottom: 20px;">EXECUTIVE PERFORMANCE POKER</h3>
+            <p>A dynamic, high-level environment. Competitive but relaxed with live hand breakdowns and continuous engagement.</p><br>
+            <p><strong>Ideal for:</strong> Top-performer recognition experiences, elite team offsites, and relationship-building among high achievers.</p>
+            <p><strong>Instruction Ratio:</strong> 2 professional instructors for 20 guests.</p>
+            <p><strong>Duration:</strong> 2-hour minimum session.</p>
+        </div>
+    </section>
+
+    <section id="instructors">
+        <h2 class="section-title orbitron-font">SOME OF OUR ELITE COMPETITIVE MINDS</h2>
+        <div class="grid-container">
+            <div class="feature-card instructor-card" style="padding:0;">
+                <div class="instructor-img"><img src="https://www.gamblinginsider.com/img/news/kenna-james-ape-in-poker-partnership.jpg" alt="Kenna James"></div>
+                <div style="padding:20px;">
+                    <h3 class="orbitron-font">KENNA JAMES</h3>
+                    <span style="color:var(--acura-red); font-weight:600; font-size:0.9rem;">20+ YEARS TEACHING</span>
+                    <p style="font-size:0.9rem; color:#999; margin-top:5px;">260+ cashes • 22 wins • $4.2M+ earnings</p>
+                </div>
+            </div>
+            <div class="feature-card instructor-card" style="padding:0;">
+                <div class="instructor-img"><img src="https://www.seminolehardrockpokeropen.com/wp-content/uploads/2022/01/2022-LHPO-Jeff-Madsen.jpg" alt="Jeff Madsen"></div>
+                <div style="padding:20px;">
+                    <h3 class="orbitron-font">JEFF MADSEN</h3>
+                    <span style="color:var(--acura-red); font-weight:600; font-size:0.9rem;">10+ YEARS TEACHING</span>
+                    <p style="font-size:0.9rem; color:#999; margin-top:5px;">4 WSOP bracelets • WSOP Player of Year • $7M+ winnings</p>
+                </div>
+            </div>
+            <div class="feature-card instructor-card" style="padding:0;">
+                <div class="instructor-img"><img src="https://media.cardplayer.com/assets/000/031/133/BLACK_WINS.jpg" alt="Taylor Black"></div>
+                <div style="padding:20px;">
+                    <h3 class="orbitron-font">TAYLOR BLACK</h3>
+                    <span style="color:var(--acura-red); font-weight:600; font-size:0.9rem;">3+ YEARS TEACHING</span>
+                    <p style="font-size:0.9rem; color:#999; margin-top:5px;">WPT Champion • $5.3M+ earnings</p>
+                </div>
+            </div>
+            <div class="feature-card instructor-card" style="padding:0;">
+                <div class="instructor-img"><img src="https://s.pnimg.net/9BAfDHPTszjJnQoJZKBseCj5xEK867L6gzAhY0EdeC0/pr:article-leading-desktop-2x/aHR0cHM6Ly9wbmlt/Zy5uZXQvdy9hcnRp/Y2xlcy8wLzY0OS84/MTNmNDJhOWI4Lmpw/Zw.webp" alt="Nick Pupillo"></div>
+                <div style="padding:20px;">
+                    <h3 class="orbitron-font">NICK PUPILLO</h3>
+                    <span style="color:var(--acura-red); font-weight:600; font-size:0.9rem;">2 YEARS TEACHING</span>
+                    <p style="font-size:0.9rem; color:#999; margin-top:5px;">WSOP bracelet • Circuit titles • $6.3M+ earnings</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="venues">
+        <h2 class="section-title orbitron-font">4 PREMIUM VENUE OPTIONS</h2>
+        <div class="grid-container">
+            <div class="feature-card venue-card" style="padding:0;">
+                <div class="venue-img"><img src="https://storage.googleapis.com/msgsndr/NDOgzs7w4I6qjHbRXevV/media/697a5d28a1d79ed017c023b2.jpg" alt="Allegiant"></div>
+                <div style="padding:20px;">
+                    <h3 class="orbitron-font" style="color:var(--acura-red);">ALLEGIANT STADIUM</h3>
+                    <p>An iconic, high-performance venue synonymous with elite competition and preparation.</p>
+                </div>
+            </div>
+            <div class="feature-card venue-card" style="padding:0;">
+                <div class="venue-img"><img src="https://storage.googleapis.com/msgsndr/NDOgzs7w4I6qjHbRXevV/media/697a5d28b700a2a6f37291b3.jpg" alt="Distillery"></div>
+                <div style="padding:20px;">
+                    <h3 class="orbitron-font" style="color:var(--acura-red);">LAS VEGAS DISTILLERY</h3>
+                    <p>A refined, private setting blending craftsmanship, precision, and controlled risk.</p>
+                </div>
+            </div>
+            <div class="feature-card venue-card" style="padding:0;">
+                <div class="venue-img"><img src="https://storage.googleapis.com/msgsndr/NDOgzs7w4I6qjHbRXevV/media/697a5c8ff215da264751a508.jpg" alt="Mob"></div>
+                <div style="padding:20px;">
+                    <h3 class="orbitron-font" style="color:var(--acura-red);">THE MOB MUSEUM</h3>
+                    <p>An immersive venue centered on strategy, psychology, leverage, and consequence.</p>
+                </div>
+            </div>
+            <div class="feature-card venue-card" style="padding:0;">
+                <div class="venue-img"><img src="https://storage.googleapis.com/msgsndr/NDOgzs7w4I6qjHbRXevV/media/697adfcc1fd827412f82ff14.jpg" alt="Kitty"></div>
+                <div style="padding:20px;">
+                    <h3 class="orbitron-font" style="color:var(--acura-red);">HERE KITTY KITTY</h3>
+                    <p>A hidden gem speakeasy designed around exclusivity and an intimate, underground atmosphere.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing">
+        <h2 class="section-title orbitron-font">VENUE-DRIVEN PRICING</h2>
+        <div style="margin-bottom: 40px;">
+            <h4 class="orbitron-font" style="margin-bottom:15px; color:var(--acura-red);">Standard Inclusions:</h4>
+            <ul style="list-style:none; display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:10px;">
+                <li>✓ 2 Hour Experience</li>
+                <li>✓ 2 World Class Pros</li>
+                <li>✓ Branded Courseware</li>
+                <li>✓ Tables, Chips, Cards & Chairs</li>
+                <li>✓ Party Bus Transportation</li>
+                <li>✓ Open Bar & Appetizers</li>
+                <li>✓ 3.5% Sales Tax</li>
+            </ul>
+        </div>
+
+        <div class="grid-container">
+            <div class="feature-card" style="border: 2px solid var(--acura-red); background:#080808;">
+                <h3 class="orbitron-font" style="color:var(--acura-red); margin-bottom:15px;">ON-SITE / MOBILE</h3>
+                <p style="font-size:0.9rem; margin-bottom:15px;">We show up to the venue of your choosing and bring everything needed.</p>
+                <ul style="list-style:none; font-size:0.9rem;">
+                    <li>• 2 World Class Pros</li>
+                    <li>• Branded Courseware</li>
+                    <li>• Tables, Chips, Chairs & Cards</li>
+                    <li>• Full 2-Hour Experience</li>
+                </ul>
+                <div class="orbitron-font" style="font-size:1.5rem; margin-top:20px; color:var(--acura-red);">$6,650</div>
+            </div>
+
+            <div class="feature-card">
+                <h3 class="orbitron-font" style="margin-bottom:15px;">LV DISTILLERY</h3>
+                <p style="font-size:0.9rem; margin-bottom:15px;">Private distillery room + Optional spirits tasting.</p>
+                <div class="orbitron-font" style="font-size:1.5rem; color:var(--acura-red);">Starting at $12,515</div>
+            </div>
+
+            <div class="feature-card">
+                <h3 class="orbitron-font" style="margin-bottom:15px;">MOB MUSEUM</h3>
+                <p style="font-size:0.9rem; margin-bottom:15px;">Historical backdrop + Museum access included.</p>
+                <div class="orbitron-font" style="font-size:1.5rem; color:var(--acura-red);">Starting at $13,715</div>
+            </div>
+
+            <div class="feature-card">
+                <h3 class="orbitron-font" style="margin-bottom:15px;">HERE KITTY KITTY</h3>
+                <p style="font-size:0.9rem; margin-bottom:15px;">Premium cocktail lounge + Intimate hidden speakeasy.</p>
+                <div class="orbitron-font" style="font-size:1.5rem; color:var(--acura-red);">Starting at $19,415</div>
+            </div>
+
+            <div class="feature-card">
+                <h3 class="orbitron-font" style="margin-bottom:15px;">ALLEGIANT STADIUM</h3>
+                <p style="font-size:0.9rem; margin-bottom:15px;">NFL Stadium venue + Private stadium tour.</p>
+                <div class="orbitron-font" style="font-size:1.5rem; color:var(--acura-red);">Starting at $32,191</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="options" style="padding-bottom: 30px;"> <h2 class="section-title orbitron-font" style="margin-bottom: 20px;">ADDITIONAL OPTIONS</h2>
+    
+    <p style="text-align: center; margin-top: 0; margin-bottom: 10px; font-weight: 500;">
+        Please ask for additional option pricing.
+    </p>
+
+    <div class="grid-container" style="margin-top: 20px;">
+        </div>
+</section>
+            </div>
+        <div class="grid-container">
+            <div class="feature-card">
+                <h4 class="orbitron-font" style="color:var(--acura-red); margin-bottom:15px;">Instructional</h4>
+                <p>Mini-tournaments, Team competitions, Game Theory modules.</p>
+            </div>
+            <div class="feature-card">
+                <h4 class="orbitron-font" style="color:var(--acura-red); margin-bottom:15px;">Branding</h4>
+                <p>Acura-branded poker felts, custom chips, and playing cards.</p>
+            </div>
+            <div class="feature-card">
+                <h4 class="orbitron-font" style="color:var(--acura-red); margin-bottom:15px;">F&B</h4>
+                <p>Whiskey tastings, premium open bar, and full dinner integration.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="feature-card" style="text-align:center; background:var(--acura-dark-gray);">
+            <h2 class="section-title orbitron-font">NEXT STEPS</h2>
+            <ul style="list-style:none; max-width:400px; margin: 0 auto 40px; text-align:left;">
+                <li style="margin-bottom:15px;">✓ Confirm preferred date (May 5th or 7th)</li>
+                <li style="margin-bottom:15px;">✓ Select preferred venue option</li>
+                <li style="margin-bottom:15px;">✓ Approve and secure event</li>
+            </ul>
+            <div style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center;">
+                <a href="tel:7253074477" class="cta-button" style="background:transparent; border-color:white;">CALL MATT</a>
+                <a href="mailto:book@pokertraininglasvegas.com?subject=Acura%20Top%20Performers%20Approval&body=Hi%20Matt%2C%0A%0AWe%20would%20like%20to%20approve%20and%20secure%20the%20Acura%20Top%20Performers%20Experience.%0A%0APreferred%20Date%3A%20%5BInsert%20May%205th%20or%207th%2C%202026%5D%0APreferred%20Venue%3A%20%5BInsert%20Venue%5D%0A%0APlease%20send%20over%20the%20invoice%20to%20lock%20this%20in.%0A%0AThank%20you!" class="cta-button">CONFIRM PREFERRED DATE</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <img src="https://storage.googleapis.com/msgsndr/NDOgzs7w4I6qjHbRXevV/media/6979d77d266d7351dddc4183.svg" alt="Acura" class="footer-logo-responsive">
+        <p class="orbitron-font">LAS VEGAS POKER TRAINING</p>
+        <p style="margin-top:10px; color:#666;">Matt Carpenter • (725) 307-4477 • book@pokertraininglasvegas.com</p>
+        <p style="margin-top:20px; font-style:italic; font-size:0.9rem; color:#888;">"Precision Crafted Performance is the future of this brand... it's a mindset."</p>
+    </footer>
+
+    <div id="lvl-floating-menu">
+        <div class="lvl-fab-actions">
+            <a href="#hero" class="lvl-fab-bubble">Home</a>
+            <a href="#intro" class="lvl-fab-bubble">Engineered</a>
+            <a href="#instructors" class="lvl-fab-bubble">The Pros</a>
+            <a href="#pricing" class="lvl-fab-bubble">Pricing</a>
+        </div>
+        <button class="lvl-fab-main" onclick="document.getElementById('lvl-floating-menu').classList.toggle('open')"><i class="fas fa-plus"></i></button>
+    </div>
+
+    <script>
+        // Slideshow logic
+        let slides = document.querySelectorAll('.hero-slide');
+        let current = 0;
+        setInterval(() => {
+            slides[current].classList.remove('active');
+            current = (current + 1) % slides.length;
+            slides[current].classList.add('active');
+        }, 5000);
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+                document.getElementById('lvl-floating-menu').classList.remove('open');
+            });
+        });
+    </script>
+</body>
+</html>
