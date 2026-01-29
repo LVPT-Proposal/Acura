@@ -345,8 +345,6 @@
         </div>
     </header>
 
-    <img src="https://storage.googleapis.com/msgsndr/E2BEbKIK8SvsJICq4vXY/media/688b94d7fc4ae33b5ab65b48.png" alt="LV Poker Training Logo" class="fixed-logo">
-
     <section class="hero" id="hero">
         <div class="hero-slideshow">
             <div class="hero-slide active" style="background-image: url('https://storage.googleapis.com/msgsndr/NDOgzs7w4I6qjHbRXevV/media/6979d4e31d09823d1b68c369.png');"></div>
@@ -586,15 +584,22 @@
         <p style="margin-top:20px; font-style:italic; font-size:0.9rem; color:#888;">"Precision Crafted Performance is the future of this brand... it's a mindset."</p>
     </footer>
 
-    <div id="lvl-floating-menu">
-        <div class="lvl-fab-actions">
-            <a href="#hero" class="lvl-fab-bubble">Home</a>
-            <a href="#intro" class="lvl-fab-bubble">Engineered</a>
-            <a href="#instructors" class="lvl-fab-bubble">The Pros</a>
-            <a href="#pricing" class="lvl-fab-bubble">Pricing</a>
+   <div id="lvl-floating-menu">
+    <div class="lvl-fab-actions" style="gap: 12px;"> <div style="text-align: right; padding-right: 5px; margin-bottom: -24px;">
+            <img src="https://storage.googleapis.com/msgsndr/E2BEbKIK8SvsJICq4vXY/media/688b94d7fc4ae33b5ab65b48.png" 
+                 alt="LVPT Logo" 
+                 style="width: 60px; height: auto; filter: drop-shadow(0 0 5px rgba(204, 0, 0, 0.4));">
         </div>
-        <button class="lvl-fab-main" onclick="document.getElementById('lvl-floating-menu').classList.toggle('open')"><i class="fas fa-plus"></i></button>
+        
+        <a href="#hero" class="lvl-fab-bubble">Home</a>
+        <a href="#intro" class="lvl-fab-bubble">Engineered</a>
+        <a href="#instructors" class="lvl-fab-bubble">The Pros</a>
+        <a href="#pricing" class="lvl-fab-bubble">Pricing</a>
     </div>
+    <button class="lvl-fab-main" onclick="document.getElementById('lvl-floating-menu').classList.toggle('open')">
+        <i class="fas fa-plus"></i>
+    </button>
+</div>
 
     <script>
         // Slideshow logic
